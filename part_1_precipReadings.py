@@ -8,7 +8,8 @@ if not Power:
     Power = "2"
 
 Reclassification = arcpy.GetParameterAsText(2)
-Reclassification = "0 30000 1;30000 60000 2;60000 90000 3;90000 120000 4" # provide a default value if unspecified
+if not Reclassification:
+    Reclassification = "0 30000 1;30000 60000 2;60000 90000 3;90000 120000 4" # provide a default value if unspecified
 
 Clip_Features = arcpy.GetParameterAsText(3)
 
